@@ -119,6 +119,7 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [plugin()],
+    base: process.env.VITE_BASE_PATH || "/Netchill",
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
