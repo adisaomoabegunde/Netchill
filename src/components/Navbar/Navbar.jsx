@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
 import search_icon from '../../assets/search_icon.svg'
@@ -6,11 +6,13 @@ import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
 import { useRef } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 
 
 const Navbar = () => {
 
     const navRef = useRef();
+    const {logout} = useContext(AuthContext);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -45,7 +47,7 @@ const Navbar = () => {
                     <img src={profile_img} alt=" " className="profile" />
                     <img src={caret_icon} alt=" " />
                     <div className="dropdown">
-                        <p>Sign Out of Netflix</p>
+                        <button onClick={logout}>Sign Out of Netflix</button >
                     </div>
 
 

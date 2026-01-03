@@ -76,3 +76,59 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+
+@media (max-width: 600px) {
+    .login {
+        padding: 20px 4%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .login-logo {
+        width: 110px;
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        padding: 30px 20px;
+        margin-top: 20px;
+    }
+
+    .login-form h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .login-form input {
+        height: 45px;
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .login-form input::placeholder {
+        font-size: 14px;
+    }
+
+    .login-form button {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .form-help {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .remember input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .form-switch {
+        font-size: 13px;
+        margin-top: 25px;
+    }
+}
