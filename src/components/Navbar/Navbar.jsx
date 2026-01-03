@@ -7,12 +7,19 @@ import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
 import { useRef } from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
 
     const navRef = useRef();
+    const navigate = useNavigate();
     const {logout} = useContext(AuthContext);
+
+    const handleLogout = async (e) => {
+        logout();
+        navigate("/loginn");
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -47,7 +54,7 @@ const Navbar = () => {
                     <img src={profile_img} alt=" " className="profile" />
                     <img src={caret_icon} alt=" " />
                     <div className="dropdown">
-                        <button onClick={logout}>Sign Out of Netflix</button >
+                        <p onClick={handleLogout}>Sign Out of Netflix</p >
                     </div>
 
 
